@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Items</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="service1.css">
+</head>
+<body class="items-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <h1>Wedding<span class="logo-accent">.</span>Plan</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="wedding.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="service.html" class="active"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a></li>
+                <li><a href="service.html"><i class="fa-solid fa-gem"></i> Packages</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a></li>
+                <li><a href="checkout.html" data-cart-count data-checkout-link>Cart (0/8)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="service-section">
+        <h1 id="page-title">Service</h1>
+        <p class="subtitle" id="page-subtitle"></p>
+        <div class="card-container" id="items-list"></div>
+        <div class="page-actions">
+            <a href="service.html" id="back-link">Back to services</a>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </section>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/items.js"></script>
+</body>
+</html>

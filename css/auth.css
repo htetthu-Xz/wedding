@@ -1,0 +1,36 @@
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-sm);
+}
+
+.auth-card h1 {
+    font-family: var(--font-display);
+    text-align: center;
+    margin-top: 0;
+}
+
+.auth-card p {
+    text-align: center;
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+}
+
+.auth-switch a {
+    color: var(--color-accent);
+    font-weight: 600;
+}

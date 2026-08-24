@@ -1,0 +1,116 @@
+.navbar {
+    background: var(--color-nav);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo h1 {
+    font-family: var(--font-display);
+    color: var(--color-text-light);
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.logo-accent {
+    color: var(--color-accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav-links a i {
+    color: var(--color-accent);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--color-dark);
+}
+
+.nav-auth-item {
+    list-style: none;
+}
+
+.nav-greeting-text {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+.nav-auth-item a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav-auth-item a i {
+    color: var(--color-accent);
+}
+
+.nav-auth-item a:hover {
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--color-dark);
+}
+
+.nav-auth-item[hidden],
+#hero-auth[hidden],
+#hero-guest[hidden] {
+    display: none !important;
+}
+
+.site-footer {
+    background: #111;
+    color: #bdb76b;
+    text-align: center;
+    padding: 28px 16px;
+    line-height: 1.8;
+}
+
+.site-footer a {
+    color: #e8d88a;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+}

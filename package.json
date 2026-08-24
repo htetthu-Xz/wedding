@@ -1,0 +1,13 @@
+{
+  "name": "wedding-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wedding planning site — local dev server",
+  "scripts": {
+    "start": "live-server --port=8080 --open=planner.html --watch=.",
+    "serve": "live-server --port=8080 --open=planner.html --watch=."
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="contact.css">
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    /* မင်းရဲ့ homepage အရောင်အတိုင်း */
+    background: #f8e9ed;
+
+    color: #59434b;
+}
+
+
+/* =========================
+   MAIN CONTACT PAGE
+========================= */
+
+.contact-page {
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns: 40% 60%;
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,0.35);
+
+    box-shadow:
+        0 15px 40px rgba(80,50,60,0.12);
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.contact-info {
+
+    padding: 45px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.contact-info::after {
+
+    content: "♡";
+
+    position: absolute;
+
+    right: 20px;
+    bottom: -40px;
+
+    font-size: 180px;
+
+    opacity: 0.05;
+}
+
+
+.ring {
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.7);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+.small-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-info h1 {
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+.contact-info h1 span {
+
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+}
+
+
+.intro {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: 0.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* CONTACT INFORMATION */
+
+.info-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 18px 0;
+}
+
+
+.icon {
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    background: rgba(255,255,255,0.7);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.info-item h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.info-item p {
+
+    font-size: 12px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   RIGHT FORM
+========================= */
+
+.contact-form {
+
+    padding: 45px;
+
+    background: rgba(255,255,255,0.7);
+}
+
+
+.form-header {
+
+    margin-bottom: 25px;
+}
+
+
+.form-header span {
+
+    font-size: 25px;
+}
+
+
+.form-header h2 {
+
+    font-size: 27px;
+
+    margin: 7px 0;
+}
+
+
+.form-header p {
+
+    font-size: 13px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-box {
+
+    margin-bottom: 17px;
+}
+
+
+.input-box label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba(100,70,80,0.15);
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: rgba(255,255,255,0.65);
+
+    color: #59434b;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+
+.input-box textarea {
+
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+
+    border-color: rgba(100,70,80,0.4);
+
+    box-shadow:
+        0 5px 15px rgba(80,50,60,0.08);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.contact-form button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.9);
+
+    color: #59434b;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(80,50,60,0.10);
+
+    transition: 0.3s;
+}
+
+
+.contact-form button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 25px rgba(80,50,60,0.15);
+}
+
+
+.contact-form button span {
+
+    margin-left: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .contact-page {
+
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+
+        padding: 35px 25px;
+    }
+
+    .contact-form {
+
+        padding: 35px 25px;
+    }
+
+}
+
+
+.contact-form .form-message {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+    <div class="contact-page">
+
+        <!-- LEFT SIDE -->
+        <div class="contact-info">
+
+            <div class="ring">💍</div>
+
+            <p class="small-title">CONTACT US</p>
+
+            <h1>
+                Let's Plan Your
+                <span>Perfect Wedding</span>
+            </h1>
+
+            <p class="intro">
+                Tell us about your special day.
+                Fill in the form and let us help
+                make your wedding beautiful.
+            </p>
+
+            <div class="info-item">
+                <div class="icon">📞</div>
+
+                <div>
+                    <h3>Phone</h3>
+                    <p>+95 9 123 456 789</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">📧</div>
+
+                <div>
+                    <h3>Email</h3>
+                    <p>weddingplanner@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">📍</div>
+
+                <div>
+                    <h3>Office Address</h3>
+                    <p>Hinthada, Myanmar</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">🕐</div>
+
+                <div>
+                    <h3>Open Hours</h3>
+                    <p>Mon - Sat : 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="contact-form">
+
+            <div class="form-header">
+
+                <span>♡</span>
+
+                <h2>Wedding Planning Form</h2>
+
+                <p>
+                    Please provide your wedding details.
+                </p>
+
+            </div>
+
+            <p class="form-message" id="contact-error"></p>
+            <p class="form-message" id="contact-success"></p>
+
+            <form id="weddingForm">
+
+                <!-- FULL NAME -->
+                <div class="input-box">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="input-box">
+
+                    <label>Phone</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="input-box">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <!-- WEDDING DATE -->
+                <div class="input-box">
+
+                    <label>Wedding Date</label>
+
+                    <input
+                        type="date"
+                        id="weddingDate"
+                        required>
+
+                </div>
+
+
+                <!-- WEDDING LOCATION -->
+                <div class="input-box">
+
+                    <label>Wedding Location</label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Enter wedding location"
+                        required>
+
+                </div>
+
+
+                <!-- NUMBER OF GUESTS -->
+                <div class="input-box">
+
+                    <label>Number of Guests</label>
+
+                    <input
+                        type="number"
+                        id="guests"
+                        placeholder="Enter number of guests"
+                        min="1"
+                        required>
+
+                </div>
+ <!-- PACKAGE -->
+                <div class="input-box">
+
+                    <label>Package</label>
+
+                    <select id="package" required>
+
+                        <option value="">
+                            Select a package
+                        </option>
+
+                        <option value="Basic Package">
+                            • Basic Package
+                        </option>
+
+                        <option value="Standard Package">
+                            • Standard Package
+                        </option>
+
+                        <option value="Premium Package">
+                            • Premium Package
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ESTIMATED BUDGET -->
+                <div class="input-box">
+
+                    <label>Estimated Budget</label>
+
+                    <input
+                        type="number"
+                        id="budget"
+                        placeholder="Enter estimated budget"
+                        min="0"
+                        required>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div class="input-box">
+
+                    <label>Message / Special Request</label>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Write your message or special request..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button type="submit">
+
+                    Submit
+
+                    <span>♡</span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/storage.js"></script>
+    <script src="js/messages.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
