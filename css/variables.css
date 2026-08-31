@@ -27,4 +27,5 @@
     --font-body: 'Poppins', sans-serif;
     --font-display: 'Playfair Display', serif;
     --transition: 0.25s ease;
+    --nav-height: 76px;
 }

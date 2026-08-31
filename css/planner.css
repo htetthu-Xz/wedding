@@ -9,6 +9,10 @@
     padding-bottom: 88px;
 }
 
+.planner-page .site-footer {
+    margin-bottom: 72px;
+}
+
 .planner-page .page-section {
     animation: plannerFadeIn 0.35s ease;
 }

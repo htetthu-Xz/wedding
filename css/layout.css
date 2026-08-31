@@ -1,4 +1,10 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 200;
     background: var(--color-nav);
     display: flex;
     justify-content: space-between;
@@ -6,6 +12,20 @@
     padding: 18px 40px;
     flex-wrap: wrap;
     gap: 12px;
+    box-shadow: 0 4px 18px rgba(76, 53, 64, 0.18);
+}
+
+body.site-page {
+    padding-top: var(--nav-height);
+}
+
+body.home-page {
+    padding-top: 0;
+}
+
+body.home-page .navbar {
+    background: rgba(76, 53, 64, 0.88);
+    backdrop-filter: blur(12px);
 }
 
 .logo h1 {
@@ -98,6 +118,7 @@
     text-align: center;
     padding: 28px 16px;
     line-height: 1.8;
+    margin-top: 40px;
 }
 
 .site-footer a {

@@ -20,15 +20,12 @@ body {
 }
 
 .navbar {
-    background-color: #4c3540;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
-    position: relative;
     width: 100%;
-    z-index: 10;
-	backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     flex-wrap: wrap;
     gap: 12px;
 }

@@ -7,6 +7,11 @@
 
     <title>Contact Us</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="contact.css">
 <style>
 * {
@@ -32,7 +37,7 @@ body {
     width: 90%;
     max-width: 1100px;
 
-    margin: 40px auto;
+    margin: 24px auto 40px;
 
     display: grid;
 
@@ -376,7 +381,28 @@ body {
 </style>
 </head>
 
-<body>
+<body class="site-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <h1>Wedding<span class="logo-accent">.</span>Plan</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="wedding.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="planner.html?step=packages&browse=1"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                <li><a href="contact.html" class="active"><i class="fa-solid fa-phone"></i> Contact</a></li>
+                <li class="nav-auth-item" id="nav-greeting" hidden><span class="nav-greeting-text" id="nav-greeting-text"></span></li>
+                <li class="nav-auth-item" id="nav-my-plan" hidden><a href="planner.html?step=my-plan"><i class="fa-solid fa-heart"></i> My plan</a></li>
+                <li class="nav-auth-item" id="nav-logout" hidden><a href="#" id="nav-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                <li class="nav-auth-item" id="nav-login" hidden><a href="planner.html?step=login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+                <li class="nav-auth-item" id="nav-register" hidden><a href="planner.html?step=register"><i class="fa-solid fa-user-plus"></i> Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="page-message" class="page-message" hidden></div>
 
     <div class="contact-page">
 
@@ -611,9 +637,17 @@ body {
 
     </div>
 
+    <footer class="site-footer">
+        &copy; Group3. All Rights Reserved.
+        <p>Author: Group(3) 2025<br>
+        <a href="mailto:Wedding-Planning@gmail.com">Wedding-Planning@gmail.com</a></p>
+    </footer>
 
     <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/booking.js"></script>
     <script src="js/messages.js"></script>
+    <script src="js/nav.js"></script>
     <script src="js/contact.js"></script>
 </body>
 </html>
