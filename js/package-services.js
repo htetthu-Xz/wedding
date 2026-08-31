@@ -260,8 +260,8 @@ function initChoosePage(options) {
         }
 
         for (var j = 0; j < items.length; j++) {
-            var item = items[j];
-            var isChosen = choice && choice.itemId === item.id;
+            (function (pickedItem) {
+            var isChosen = choice && choice.itemId === pickedItem.id;
             var card = document.createElement("div");
             card.className = "choose-item-card" + (isChosen ? " is-selected" : "");
             card.setAttribute("role", "button");
@@ -272,8 +272,8 @@ function initChoosePage(options) {
 
             var photo = document.createElement("img");
             photo.className = "choose-item-photo";
-            photo.src = getItemImage(service.id, item);
-            photo.alt = item.name;
+            photo.src = getItemImage(service.id, pickedItem);
+            photo.alt = pickedItem.name;
             photo.loading = "lazy";
             photo.decoding = "async";
             photo.addEventListener("error", function () {
@@ -285,17 +285,16 @@ function initChoosePage(options) {
             var zoomBtn = document.createElement("button");
             zoomBtn.type = "button";
             zoomBtn.className = "choose-item-zoom";
-            zoomBtn.setAttribute("aria-label", "View full image of " + item.name);
+            zoomBtn.setAttribute("aria-label", "View full image of " + pickedItem.name);
             zoomBtn.innerHTML = "<i class=\"fa-solid fa-magnifying-glass-plus\"></i>";
-            zoomBtn.addEventListener("click", function (event) {
-                event.stopPropagation();
-                openImageLightbox(photo.src, item.name);
-            });
 
-            photo.addEventListener("click", function (event) {
+            function openThisPhoto(event) {
                 event.stopPropagation();
-                openImageLightbox(photo.src, item.name);
-            });
+                openImageLightbox(photo.currentSrc || photo.src, pickedItem.name);
+            }
+
+            zoomBtn.addEventListener("click", openThisPhoto);
+            photo.addEventListener("click", openThisPhoto);
 
             visual.appendChild(photo);
             visual.appendChild(zoomBtn);
@@ -309,7 +308,7 @@ function initChoosePage(options) {
 
             var name = document.createElement("span");
             name.className = "choose-item-name";
-            name.textContent = item.name;
+            name.textContent = pickedItem.name;
 
             var action = document.createElement("span");
             action.className = "choose-item-action";
@@ -319,25 +318,24 @@ function initChoosePage(options) {
             card.appendChild(name);
             card.appendChild(action);
 
-            card.addEventListener("click", (function (serviceId, picked) {
-                return function () {
-                    var result = chooseItem(serviceId, picked);
-                    showChooseMessage(result);
+            card.addEventListener("click", function () {
+                var result = chooseItem(service.id, pickedItem);
+                showChooseMessage(result);
 
-                    if (result.complete) {
-                        flashMessage("success", "All 8 services chosen! You can checkout now.");
-                    } else if (!getChoice(SERVICES[chooseActiveIndex].id)) {
-                        var nextIdx = findUnchosenIndex(chooseActiveIndex + 1);
-                        if (nextIdx !== -1) {
-                            chooseActiveIndex = nextIdx;
-                        }
+                if (result.complete) {
+                    flashMessage("success", "All 8 services chosen! You can checkout now.");
+                } else if (!getChoice(SERVICES[chooseActiveIndex].id)) {
+                    var nextIdx = findUnchosenIndex(chooseActiveIndex + 1);
+                    if (nextIdx !== -1) {
+                        chooseActiveIndex = nextIdx;
                     }
+                }
 
-                    renderChooseView();
-                };
-            })(service.id, item));
+                renderChooseView();
+            });
 
             grid.appendChild(card);
+            })(items[j]);
         }
 
         panel.appendChild(grid);
