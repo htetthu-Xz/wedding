@@ -177,7 +177,7 @@ window.ITEMS = {
     },
     bouquets: {
         basic: [
-            { id: "white-rose-bunch", name: "White rose bunch" },
+            { id: "white-rose-bunch", name: "White rose bunch", images: ["images/flower1.jpg", "images/items/bouquets/white-rose-bunch-2.jpg", "images/items/bouquets/white-rose-bunch-3.jpg"] },
             { id: "simple-mixed", name: "Simple mixed flowers" }
         ],
         standard: [
@@ -221,3 +221,45 @@ window.ITEMS = {
         ]
     }
 };
+
+window.DEFAULT_ITEM_IMAGE = "images/default-item.svg";
+
+window.SERVICE_ITEM_IMAGES = {
+    dress: "dress1.jpg",
+    food: "cookie.jpg",
+    shoes: "shoes.jpg",
+    accessories: "acce.jpg",
+    cakes: "cake.jpg",
+    bouquets: "flower1.jpg",
+    decorations: "decoration.jpg",
+    locations: "decoration.jpg"
+};
+
+function getItemImageFallback(serviceId) {
+    if (window.SERVICE_ITEM_IMAGES && SERVICE_ITEM_IMAGES[serviceId]) {
+        return "images/" + SERVICE_ITEM_IMAGES[serviceId];
+    }
+    return DEFAULT_ITEM_IMAGE;
+}
+
+function getItemImages(serviceId, item) {
+    if (item.images && item.images.length) {
+        return item.images.slice(0, 3);
+    }
+
+    var paths = [];
+    var i;
+
+    for (i = 1; i <= 3; i++) {
+        paths.push("images/items/" + serviceId + "/" + item.id + "-" + i + ".jpg");
+    }
+
+    return paths;
+}
+
+function getItemImage(serviceId, item) {
+    if (item) {
+        return getItemImages(serviceId, item)[0];
+    }
+    return getItemImageFallback(serviceId);
+}

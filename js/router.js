@@ -12,6 +12,9 @@ function goToStep(step, options) {
     options = options || {};
 
     if (window.PLANNER_MODE && typeof showPlannerStep === "function") {
+        if (options.browse === undefined && typeof isBrowseMode === "function" && isBrowseMode()) {
+            options.browse = true;
+        }
         showPlannerStep(step, options);
         return;
     }

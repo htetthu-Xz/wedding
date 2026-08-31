@@ -50,6 +50,8 @@ function initVisionPage() {
                 window.setTimeout(function () {
                     if (hasActiveBooking() && isEditMode()) {
                         goToStep("my-plan");
+                    } else if (typeof isBrowseMode === "function" && isBrowseMode()) {
+                        goToStep("target", { browse: true });
                     } else {
                         goToStep("target");
                     }

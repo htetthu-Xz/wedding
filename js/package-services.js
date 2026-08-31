@@ -23,17 +23,20 @@ function firstChooseIndex() {
 function initChoosePage(options) {
     options = options || {};
     var params = new URLSearchParams(window.location.search);
+    var browsing = options.browse || (typeof isBrowseMode === "function" && isBrowseMode());
     var level = options.level || params.get("level") || getCart().level;
     var actionMsg = document.getElementById("planner-action-message");
 
-    if (!hasVision()) {
-        goToStep("vision");
-        return;
-    }
+    if (!browsing) {
+        if (!hasVision()) {
+            goToStep("vision");
+            return;
+        }
 
-    if (!hasTarget()) {
-        goToStep("target");
-        return;
+        if (!hasTarget()) {
+            goToStep("target");
+            return;
+        }
     }
 
     if (!level || !PACKAGES[level]) {
@@ -265,12 +268,7 @@ function initChoosePage(options) {
 
             var visual = document.createElement("div");
             visual.className = "choose-item-visual";
-            visual.setAttribute("data-service", service.id);
-
-            var itemIcon = document.createElement("span");
-            itemIcon.className = "choose-item-icon";
-            itemIcon.textContent = service.icon;
-            visual.appendChild(itemIcon);
+            visual.appendChild(createItemGallery(service.id, item));
 
             if (isChosen) {
                 var badge = document.createElement("span");
@@ -357,6 +355,15 @@ function initChoosePage(options) {
                 chooseActiveIndex += 1;
                 renderChooseView();
             }
+        });
+    }
+
+    var changePkg = document.getElementById("choose-change-pkg");
+    if (changePkg && changePkg.dataset.bound !== "1") {
+        changePkg.dataset.bound = "1";
+        changePkg.addEventListener("click", function (event) {
+            event.preventDefault();
+            goToStep("packages", { browse: browsing });
         });
     }
 

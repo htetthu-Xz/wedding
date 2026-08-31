@@ -1,0 +1,103 @@
+.about-page {
+    background:
+        radial-gradient(ellipse at top right, rgba(232, 149, 174, 0.1), transparent 55%),
+        var(--color-bg);
+    min-height: 100vh;
+}
+
+.about-main {
+    max-width: 1000px;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.about-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.about-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.about-card {
+    background: var(--color-surface-2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(76, 53, 64, 0.06);
+}
+
+.about-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.about-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: var(--color-dark);
+}
+
+.about-card p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.about-team h2 {
+    font-family: var(--font-display);
+    margin-top: 0;
+}
+
+.about-team-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 20px;
+}
+
+.about-team-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: var(--color-muted);
+}
+
+.about-team-list i {
+    color: var(--color-accent);
+}
+
+.about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.about-actions .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+}

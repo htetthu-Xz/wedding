@@ -56,7 +56,7 @@ function updateHomeLinks() {
             packageBtn.setAttribute("href", "planner.html?step=my-plan");
         } else {
             packageBtn.textContent = "Our Packages";
-            packageBtn.setAttribute("href", "planner.html?step=packages");
+            packageBtn.setAttribute("href", "planner.html?step=packages&browse=1");
         }
     }
 }

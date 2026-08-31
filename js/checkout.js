@@ -35,10 +35,42 @@ function initCheckoutPage() {
     }
 
     if (!hasVision() || !hasTarget()) {
-        showPageMessage("page-message", "error", "Please complete vision and target before checkout.");
-        window.setTimeout(function () {
-            goToStep(!hasVision() ? "vision" : "target");
-        }, 1500);
+        var browse = typeof isBrowseMode === "function" && isBrowseMode();
+        showPageMessage("page-message", "error", browse
+            ? "Please set your wedding vision and target before checkout."
+            : "Please complete vision and target before checkout.");
+
+        if (!browse) {
+            window.setTimeout(function () {
+                goToStep(!hasVision() ? "vision" : "target");
+            }, 1500);
+        } else {
+            root.innerHTML = "";
+            var setup = document.createElement("div");
+            setup.className = "summary-card";
+            setup.innerHTML = "<h3>Almost there</h3><p>Before checkout, tell us about your wedding vision and target details.</p>";
+            var visionBtn = document.createElement("button");
+            visionBtn.type = "button";
+            visionBtn.className = "card-btn";
+            visionBtn.textContent = "Set vision";
+            visionBtn.addEventListener("click", function () {
+                goToStep("vision", { browse: true });
+            });
+            var targetBtn = document.createElement("button");
+            targetBtn.type = "button";
+            targetBtn.className = "btn-secondary";
+            targetBtn.style.marginLeft = "10px";
+            targetBtn.textContent = "Set target";
+            targetBtn.addEventListener("click", function () {
+                goToStep("target", { browse: true });
+            });
+            var actions = document.createElement("div");
+            actions.className = "page-actions";
+            actions.appendChild(visionBtn);
+            actions.appendChild(targetBtn);
+            root.appendChild(setup);
+            root.appendChild(actions);
+        }
         return;
     }
 

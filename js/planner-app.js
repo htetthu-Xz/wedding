@@ -46,6 +46,10 @@ function showPlannerStep(step, options) {
                 params.set("level", options.level);
             }
 
+            if (options.browse || (typeof isBrowseMode === "function" && isBrowseMode())) {
+                params.set("browse", "1");
+            }
+
             history.replaceState(null, "", "planner.html?" + params.toString());
         }
     } catch (err) {
@@ -102,7 +106,11 @@ function showPlannerStep(step, options) {
     } else if (step === "packages") {
         initPackagesPage();
     } else if (step === "choose") {
-        initChoosePage({ level: options.level, skipClearMessage: options.skipClearMessage });
+        initChoosePage({
+            level: options.level,
+            skipClearMessage: options.skipClearMessage,
+            browse: options.browse
+        });
     } else if (step === "checkout") {
         initCheckoutPage();
     }

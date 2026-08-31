@@ -21,6 +21,8 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="wedding.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="planner.html?step=packages&browse=1"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
                 <li><a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a></li>
                 <li id="nav-cart-item"><a href="planner.html?step=checkout" id="planner-checkout-btn" data-cart-count data-checkout-link>Cart (0/8)</a></li>
                 <li class="nav-auth-item" id="nav-greeting" hidden><span class="nav-greeting-text" id="nav-greeting-text"></span></li>
@@ -116,7 +118,7 @@
         </div>
         <div class="choose-nav-bar">
             <button type="button" class="btn-secondary choose-nav-btn" id="choose-prev"><i class="fa-solid fa-arrow-left"></i> Previous</button>
-            <a href="#" class="choose-change-pkg" onclick="goToStep('packages');return false;">Change package</a>
+            <a href="#" class="choose-change-pkg" id="choose-change-pkg">Change package</a>
             <button type="button" class="card-btn choose-nav-btn" id="choose-next">Next service <i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </section>
@@ -140,6 +142,7 @@
     <script src="js/calculations.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/booking.js"></script>
+    <script src="js/browse.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/messages.js"></script>
     <script src="js/router.js"></script>
@@ -150,6 +153,7 @@
     <script src="js/target.js"></script>
     <script src="js/packages.js"></script>
     <script src="js/package-services.js"></script>
+    <script src="js/item-gallery.js"></script>
     <script src="js/checkout.js"></script>
     <script src="js/my-plan.js"></script>
     <script src="js/planner-app.js"></script>

@@ -1,31 +1,44 @@
 function initPackagesPage() {
-    if (!hasVision()) {
-        goToStep("vision");
-        return;
+    var browsing = typeof isBrowseMode === "function" && isBrowseMode();
+
+    if (!browsing) {
+        if (!hasVision()) {
+            goToStep("vision");
+            return;
+        }
+
+        if (!hasTarget()) {
+            goToStep("target");
+            return;
+        }
     }
 
-    if (!hasTarget()) {
-        goToStep("target");
-        return;
-    }
-
-    renderFlowSteps("package");
+    renderFlowSteps(browsing ? "package" : "package");
 
     var container = document.getElementById("packages-list");
     var plan = getPlan();
-    var recommended = plan.target.recommendedPackage || recommendPackage(plan.target.budget);
     var summary = document.getElementById("package-summary");
+    var recommended = browsing ? "standard" : (plan.target.recommendedPackage || recommendPackage(plan.target.budget));
 
     if (summary) {
-        summary.innerHTML =
-            '<div class="summary-card">' +
-            "<h3>Your plan</h3>" +
-            "<p><strong>Vision:</strong> " + plan.vision.name + "</p>" +
-            "<p><strong>Couple:</strong> " + plan.target.partner1 + " & " + plan.target.partner2 + "</p>" +
-            "<p><strong>Date:</strong> " + plan.target.weddingDate + " · <strong>City:</strong> " + plan.target.city + "</p>" +
-            "<p><strong>Guests:</strong> " + plan.target.guests + " · <strong>Budget:</strong> " + formatMMK(plan.target.budget) + "</p>" +
-            "<p><strong>Recommended:</strong> " + PACKAGES[recommended].name + " (" + formatMMK(PACKAGES[recommended].price) + ")</p>" +
-            "</div>";
+        if (browsing) {
+            summary.innerHTML =
+                '<div class="summary-card browse-banner">' +
+                "<h3>Browse our wedding packages</h3>" +
+                "<p>No login needed to explore. Pick a package to view service items with photos. " +
+                "Register or log in only when you are ready to confirm at checkout.</p>" +
+                "</div>";
+        } else {
+            summary.innerHTML =
+                '<div class="summary-card">' +
+                "<h3>Your plan</h3>" +
+                "<p><strong>Vision:</strong> " + plan.vision.name + "</p>" +
+                "<p><strong>Couple:</strong> " + plan.target.partner1 + " & " + plan.target.partner2 + "</p>" +
+                "<p><strong>Date:</strong> " + plan.target.weddingDate + " · <strong>City:</strong> " + plan.target.city + "</p>" +
+                "<p><strong>Guests:</strong> " + plan.target.guests + " · <strong>Budget:</strong> " + formatMMK(plan.target.budget) + "</p>" +
+                "<p><strong>Recommended:</strong> " + PACKAGES[recommended].name + " (" + formatMMK(PACKAGES[recommended].price) + ")</p>" +
+                "</div>";
+        }
     }
 
     if (!container) {
@@ -47,7 +60,7 @@ function initPackagesPage() {
         if (pkg.id === recommended) {
             var badge = document.createElement("span");
             badge.className = "badge";
-            badge.textContent = "Best match for your budget";
+            badge.textContent = browsing ? "Popular choice" : "Best match for your budget";
             card.appendChild(badge);
         }
 
@@ -65,17 +78,25 @@ function initPackagesPage() {
         price.className = "package-price";
         price.textContent = formatMMK(pkg.price);
 
-        var diff = budgetDiff(plan.target.budget, pkg.price);
-        var diffLine = document.createElement("p");
-        diffLine.className = "package-diff";
-        diffLine.textContent = diff >= 0
-            ? "Within budget by " + formatMMK(diff)
-            : "Over budget by " + formatMMK(Math.abs(diff));
+        card.appendChild(icon);
+        card.appendChild(title);
+        card.appendChild(note);
+        card.appendChild(price);
+
+        if (!browsing) {
+            var diff = budgetDiff(plan.target.budget, pkg.price);
+            var diffLine = document.createElement("p");
+            diffLine.className = "package-diff";
+            diffLine.textContent = diff >= 0
+                ? "Within budget by " + formatMMK(diff)
+                : "Over budget by " + formatMMK(Math.abs(diff));
+            card.appendChild(diffLine);
+        }
 
         var link = document.createElement("a");
         link.href = "#";
         link.className = "card-btn";
-        link.textContent = "Choose items";
+        link.textContent = browsing ? "View items" : "Choose items";
 
         link.addEventListener("click", (function (levelId) {
             return function (event) {
@@ -84,15 +105,10 @@ function initPackagesPage() {
                 if (result.cleared) {
                     flashMessage("info", "Package changed. Please choose all 8 items again.");
                 }
-                goToStep("choose", { level: levelId });
+                goToStep("choose", { level: levelId, browse: browsing });
             };
         })(pkg.id));
 
-        card.appendChild(icon);
-        card.appendChild(title);
-        card.appendChild(note);
-        card.appendChild(price);
-        card.appendChild(diffLine);
         card.appendChild(link);
         container.appendChild(card);
     }

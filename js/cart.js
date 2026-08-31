@@ -279,6 +279,9 @@ function syncPageUrl() {
             var params = new URLSearchParams();
             params.set("step", "choose");
             params.set("level", cart.level);
+            if (typeof isBrowseMode === "function" && isBrowseMode()) {
+                params.set("browse", "1");
+            }
             var choices = cart.choices || {};
             for (var key in choices) {
                 if (choices[key] && choices[key].itemId) {

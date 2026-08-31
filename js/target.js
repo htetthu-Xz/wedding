@@ -108,6 +108,8 @@ function initTargetPage() {
         window.setTimeout(function () {
             if (hasActiveBooking() && isEditMode()) {
                 goToStep("my-plan");
+            } else if (typeof isBrowseMode === "function" && isBrowseMode()) {
+                goToStep("packages", { browse: true });
             } else {
                 goToStep("packages");
             }
