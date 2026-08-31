@@ -100,166 +100,133 @@ window.SERVICES = [
 window.ITEMS = {
     dress: {
         basic: [
-            { id: "simple-white-gown", name: "Simple White Gown" },
-            { id: "ivory-a-line", name: "Ivory A-line" }
+            { id: "simple-white-gown", name: "Simple White Gown", image: "images/dress1.jpg" },
+            { id: "ivory-a-line", name: "Ivory A-line", image: "images/dress2.jpg" }
         ],
         standard: [
-            { id: "lace-a-line", name: "Lace A-line" },
-            { id: "satin-mermaid", name: "Satin Mermaid" },
-            { id: "classic-ballgown", name: "Classic Ballgown" }
+            { id: "lace-a-line", name: "Lace A-line", image: "images/dress3.jpg" },
+            { id: "satin-mermaid", name: "Satin Mermaid", image: "images/dress4.jpg" },
+            { id: "classic-ballgown", name: "Classic Ballgown", image: "images/dress5.jpg" }
         ],
         premium: [
-            { id: "silk-couture", name: "Silk Couture Gown" },
-            { id: "crystal-ballgown", name: "Crystal Ballgown" },
-            { id: "royal-lace", name: "Royal Lace Gown" }
+            { id: "silk-couture", name: "Silk Couture Gown", image: "images/dress6.jpg" },
+            { id: "crystal-ballgown", name: "Crystal Ballgown", image: "images/dress7.jpg" },
+            { id: "royal-lace", name: "Royal Lace Gown", image: "images/dress8.jpg" }
         ]
     },
     food: {
         basic: [
-            { id: "simple-rice-set", name: "Simple rice set" },
-            { id: "classic-buffet", name: "Classic buffet" }
+            { id: "simple-rice-set", name: "Simple rice set", image: "images/cookie.jpg" },
+            { id: "classic-buffet", name: "Classic buffet", image: "images/cookie2.jpg" }
         ],
         standard: [
-            { id: "mixed-buffet", name: "Mixed buffet" },
-            { id: "family-feast", name: "Family feast" },
-            { id: "garden-lunch", name: "Garden lunch" }
+            { id: "mixed-buffet", name: "Mixed buffet", image: "images/cookie3.jpg" },
+            { id: "family-feast", name: "Family feast", image: "images/cookie4.jpg" },
+            { id: "garden-lunch", name: "Garden lunch", image: "images/cookie5.jpg" }
         ],
         premium: [
-            { id: "grand-banquet", name: "Grand banquet" },
-            { id: "chef-tasting", name: "Chef tasting menu" },
-            { id: "royal-dinner", name: "Royal dinner" }
+            { id: "grand-banquet", name: "Grand banquet", image: "images/cookie6.jpg" },
+            { id: "chef-tasting", name: "Chef tasting menu", image: "images/cookie7.jpg" },
+            { id: "royal-dinner", name: "Royal dinner", image: "images/cookie8.jpg" }
         ]
     },
     shoes: {
         basic: [
-            { id: "white-flats", name: "White flats" },
-            { id: "simple-heels", name: "Simple heels" }
+            { id: "white-flats", name: "White flats", image: "images/shoes.jpg" },
+            { id: "simple-heels", name: "Simple heels", image: "images/shoes2.jpg" }
         ],
         standard: [
-            { id: "pearl-heels", name: "Pearl heels" },
-            { id: "satin-pumps", name: "Satin pumps" },
-            { id: "lace-sandals", name: "Lace sandals" }
+            { id: "pearl-heels", name: "Pearl heels", image: "images/shoes3.jpg" },
+            { id: "satin-pumps", name: "Satin pumps", image: "images/shoes4.jpg" },
+            { id: "lace-sandals", name: "Lace sandals", image: "images/shoes5.jpg" }
         ],
         premium: [
-            { id: "crystal-heels", name: "Crystal heels" },
-            { id: "designer-pumps", name: "Designer pumps" }
+            { id: "crystal-heels", name: "Crystal heels", image: "images/shoes6.jpg" },
+            { id: "designer-pumps", name: "Designer pumps", image: "images/shoes7.jpg" }
         ]
     },
     accessories: {
         basic: [
-            { id: "simple-veil", name: "Simple veil" },
-            { id: "pearl-earrings", name: "Pearl earrings" }
+            { id: "simple-veil", name: "Simple veil", image: "images/acce.jpg" },
+            { id: "pearl-earrings", name: "Pearl earrings", image: "images/acce2.jpg" }
         ],
         standard: [
-            { id: "tiara-set", name: "Tiara set" },
-            { id: "gold-jewelry", name: "Gold jewelry" },
-            { id: "pearl-set", name: "Pearl set" }
+            { id: "tiara-set", name: "Tiara set", image: "images/acce3.jpg" },
+            { id: "gold-jewelry", name: "Gold jewelry", image: "images/acce4.jpg" },
+            { id: "pearl-set", name: "Pearl set", image: "images/acce5.jpg" }
         ],
         premium: [
-            { id: "diamond-set", name: "Diamond set" },
-            { id: "royal-crown", name: "Royal crown" }
+            { id: "diamond-set", name: "Diamond set", image: "images/acce6.jpg" },
+            { id: "royal-crown", name: "Royal crown", image: "images/acce7.jpg" }
         ]
     },
     cakes: {
         basic: [
-            { id: "two-tier-cake", name: "Two-tier cake" },
-            { id: "simple-cream-cake", name: "Simple cream cake" }
+            { id: "two-tier-cake", name: "Two-tier cake", image: "images/cake.jpg" },
+            { id: "simple-cream-cake", name: "Simple cream cake", image: "images/cake2.jpg" }
         ],
         standard: [
-            { id: "floral-three-tier", name: "Floral three-tier" },
-            { id: "classic-buttercream", name: "Classic buttercream" },
-            { id: "heart-cake", name: "Heart cake" }
+            { id: "floral-three-tier", name: "Floral three-tier", image: "images/cake3.jpg" },
+            { id: "classic-buttercream", name: "Classic buttercream", image: "images/cake4.jpg" },
+            { id: "heart-cake", name: "Heart cake", image: "images/cake5.jpg" }
         ],
         premium: [
-            { id: "grand-five-tier", name: "Grand five-tier" },
-            { id: "luxury-fondant", name: "Luxury fondant cake" }
+            { id: "grand-five-tier", name: "Grand five-tier", image: "images/cake6.jpg" },
+            { id: "luxury-fondant", name: "Luxury fondant cake", image: "images/cake7.jpg" }
         ]
     },
     bouquets: {
         basic: [
-            { id: "white-rose-bunch", name: "White rose bunch", images: ["images/flower1.jpg", "images/items/bouquets/white-rose-bunch-2.jpg", "images/items/bouquets/white-rose-bunch-3.jpg"] },
-            { id: "simple-mixed", name: "Simple mixed flowers" }
+            { id: "white-rose-bunch", name: "White rose bunch", image: "images/flower1.jpg" },
+            { id: "simple-mixed", name: "Simple mixed flowers", image: "images/flower2.jpg" }
         ],
         standard: [
-            { id: "pink-rose-bouquet", name: "Pink rose bouquet" },
-            { id: "garden-mix", name: "Garden mix" },
-            { id: "white-peony", name: "White peony bouquet" }
+            { id: "pink-rose-bouquet", name: "Pink rose bouquet", image: "images/flower3.jpg" },
+            { id: "garden-mix", name: "Garden mix", image: "images/flower4.jpg" },
+            { id: "white-peony", name: "White peony bouquet", image: "images/flower5.jpg" }
         ],
         premium: [
-            { id: "luxury-orchid", name: "Luxury orchid bouquet" },
-            { id: "royal-cascade", name: "Royal rose cascade" }
+            { id: "luxury-orchid", name: "Luxury orchid bouquet", image: "images/flower6.jpg" },
+            { id: "royal-cascade", name: "Royal rose cascade", image: "images/flower7.jpg" }
         ]
     },
     decorations: {
         basic: [
-            { id: "simple-table", name: "Simple table setup" },
-            { id: "light-balloon", name: "Light balloon decor" }
+            { id: "simple-table", name: "Simple table setup", image: "images/decoration.jpg" },
+            { id: "light-balloon", name: "Light balloon decor", image: "images/decoration2.jpg" }
         ],
         standard: [
-            { id: "floral-stage", name: "Floral stage" },
-            { id: "garden-theme", name: "Garden theme" },
-            { id: "fairy-lights", name: "Fairy lights" }
+            { id: "floral-stage", name: "Floral stage", image: "images/decoration3.jpg" },
+            { id: "garden-theme", name: "Garden theme", image: "images/decoration4.jpg" },
+            { id: "fairy-lights", name: "Fairy lights", image: "images/decoration5.jpg" }
         ],
         premium: [
-            { id: "grand-ballroom", name: "Grand ballroom" },
-            { id: "luxury-gold", name: "Luxury gold theme" }
+            { id: "grand-ballroom", name: "Grand ballroom", image: "images/decoration6.jpg" },
+            { id: "luxury-gold", name: "Luxury gold theme", image: "images/decoration7.jpg" }
         ]
     },
     locations: {
         basic: [
-            { id: "garden-hall", name: "Garden hall" },
-            { id: "town-hall", name: "Town hall" }
+            { id: "garden-hall", name: "Garden hall", image: "images/location1.jpg" },
+            { id: "town-hall", name: "Town hall", image: "images/location2.jpg" }
         ],
         standard: [
-            { id: "riverside-venue", name: "Riverside venue" },
-            { id: "hotel-ballroom", name: "Hotel ballroom" },
-            { id: "garden-villa", name: "Garden villa" }
+            { id: "riverside-venue", name: "Riverside venue", image: "images/location3.jpg" },
+            { id: "hotel-ballroom", name: "Hotel ballroom", image: "images/location4.jpg" },
+            { id: "garden-villa", name: "Garden villa", image: "images/location5.jpg" }
         ],
         premium: [
-            { id: "beach-resort", name: "Beach resort" },
-            { id: "grand-palace", name: "Grand palace hall" }
+            { id: "beach-resort", name: "Beach resort", image: "images/location6.jpg" },
+            { id: "grand-palace", name: "Grand palace hall", image: "images/location7.jpg" }
         ]
     }
 };
 
 window.DEFAULT_ITEM_IMAGE = "images/default-item.svg";
 
-window.SERVICE_ITEM_IMAGES = {
-    dress: "dress1.jpg",
-    food: "cookie.jpg",
-    shoes: "shoes.jpg",
-    accessories: "acce.jpg",
-    cakes: "cake.jpg",
-    bouquets: "flower1.jpg",
-    decorations: "decoration.jpg",
-    locations: "decoration.jpg"
-};
-
-function getItemImageFallback(serviceId) {
-    if (window.SERVICE_ITEM_IMAGES && SERVICE_ITEM_IMAGES[serviceId]) {
-        return "images/" + SERVICE_ITEM_IMAGES[serviceId];
+function getItemImage(serviceId, item) {
+    if (item && item.image) {
+        return item.image;
     }
     return DEFAULT_ITEM_IMAGE;
-}
-
-function getItemImages(serviceId, item) {
-    if (item.images && item.images.length) {
-        return item.images.slice(0, 3);
-    }
-
-    var paths = [];
-    var i;
-
-    for (i = 1; i <= 3; i++) {
-        paths.push("images/items/" + serviceId + "/" + item.id + "-" + i + ".jpg");
-    }
-
-    return paths;
-}
-
-function getItemImage(serviceId, item) {
-    if (item) {
-        return getItemImages(serviceId, item)[0];
-    }
-    return getItemImageFallback(serviceId);
 }

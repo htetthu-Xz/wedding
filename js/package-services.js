@@ -268,7 +268,19 @@ function initChoosePage(options) {
 
             var visual = document.createElement("div");
             visual.className = "choose-item-visual";
-            visual.appendChild(createItemGallery(service.id, item));
+
+            var photo = document.createElement("img");
+            photo.className = "choose-item-photo";
+            photo.src = getItemImage(service.id, item);
+            photo.alt = item.name;
+            photo.loading = "lazy";
+            photo.decoding = "async";
+            photo.addEventListener("error", function () {
+                if (photo.src.indexOf(DEFAULT_ITEM_IMAGE) === -1) {
+                    photo.src = DEFAULT_ITEM_IMAGE;
+                }
+            });
+            visual.appendChild(photo);
 
             if (isChosen) {
                 var badge = document.createElement("span");
