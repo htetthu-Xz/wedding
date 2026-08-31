@@ -2,11 +2,12 @@
     background:
         radial-gradient(ellipse at top right, rgba(232, 149, 174, 0.1), transparent 55%),
         var(--color-bg);
-    min-height: 100vh;
 }
 
 .about-main {
     max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-hero {

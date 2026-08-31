@@ -324,11 +324,6 @@ function updateCartLinks() {
     for (var j = 0; j < checkoutLinks.length; j++) {
         checkoutLinks[j].setAttribute("href", cart.level ? checkoutUrl : "service.html");
     }
-
-    var status = document.getElementById("planner-status");
-    if (status) {
-        status.textContent = chosenCount() + " / 8 chosen";
-    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {

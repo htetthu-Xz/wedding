@@ -5,6 +5,7 @@ function showFormMessage(element, type, message) {
 
     element.textContent = message || "";
     element.className = "form-message";
+    element.hidden = !message;
 
     if (!message) {
         return;

@@ -23,9 +23,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    padding: 18px 40px;
     width: 100%;
-    backdrop-filter: blur(15px);
     flex-wrap: wrap;
     gap: 12px;
 }
@@ -244,8 +243,10 @@ body {
     background: #e895ae;
 }
 
-.planner-page {
-    padding-bottom: 90px;
+.package-diff {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin: 8px 0 14px;
 }
 
 .planner-wrap {
@@ -307,18 +308,26 @@ body {
     min-height: 110px;
 }
 
-
-.package-diff {
-    font-size: 0.85rem;
-    color: var(--color-muted);
-    margin: 8px 0 14px;
-}
-
 #checkout-form {
     margin-top: 20px;
 }
 
 #checkout-root .card-btn {
     margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    .service-section {
+        padding: 40px 16px 60px;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 

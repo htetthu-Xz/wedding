@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/auth.css">
     <link rel="stylesheet" href="css/planner.css">
-    <link rel="stylesheet" href="service.css">
 </head>
-<body class="items-page planner-page site-page">
+<body class="planner-page site-page">
     <script>window.PLANNER_MODE = true;</script>
 
     <header class="navbar">
@@ -36,7 +35,9 @@
 
     <div id="storage-warning" class="page-message page-message-info" hidden></div>
     <div id="page-message" class="page-message" hidden></div>
-    <div class="flow-steps" id="flow-steps"></div>
+
+    <main class="planner-main">
+    <div class="flow-steps" id="flow-steps" hidden></div>
 
     <section id="step-register" class="planner-step auth-main" hidden>
         <div class="form-card auth-card">
@@ -130,11 +131,7 @@
     <section id="step-my-plan" class="planner-step page-section my-plan-section" hidden>
         <div id="my-plan-root"></div>
     </section>
-
-    <div class="planner-bar" id="planner-bar">
-        <span id="planner-status">0 / 8 chosen</span>
-        <a href="planner.html?step=checkout" data-checkout-link class="card-btn planner-checkout-btn"><i class="fa-solid fa-heart"></i> Checkout</a>
-    </div>
+    </main>
 
     <footer class="site-footer">
         &copy; Group3. All Rights Reserved.

@@ -61,23 +61,17 @@ function showPlannerStep(step, options) {
     renderNavAuth();
 
     var flowEl = document.getElementById("flow-steps");
-    var barEl = document.getElementById("planner-bar");
     var cartNav = document.getElementById("nav-cart-item");
-    var showCheckoutUi = step === "choose" || step === "checkout";
+    var showCartNav = step === "choose" || step === "checkout";
 
     if (step === "register" || step === "login" || step === "my-plan") {
         if (flowEl) {
-            flowEl.style.display = "none";
-        }
-        if (barEl) {
-            barEl.style.display = "none";
+            flowEl.hidden = true;
         }
     } else {
         if (flowEl) {
+            flowEl.hidden = false;
             flowEl.style.display = "flex";
-        }
-        if (barEl) {
-            barEl.style.display = showCheckoutUi ? "flex" : "none";
         }
 
         var flowMap = {
@@ -90,16 +84,8 @@ function showPlannerStep(step, options) {
         renderFlowSteps(flowMap[step] || step);
     }
 
-    if (document.body.classList.contains("planner-page")) {
-        if (showCheckoutUi) {
-            document.body.classList.add("has-planner-bar");
-        } else {
-            document.body.classList.remove("has-planner-bar");
-        }
-    }
-
     if (cartNav) {
-        cartNav.hidden = step === "my-plan" || !showCheckoutUi;
+        cartNav.hidden = step === "my-plan" || !showCartNav;
     }
 
     if (step === "register") {

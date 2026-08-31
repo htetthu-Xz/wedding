@@ -22,7 +22,8 @@ body.home-page {
     flex-direction: column;
 }
 
-body.site-page {
+body.site-page,
+body.planner-page {
     padding-top: var(--nav-height);
 }
 
@@ -30,12 +31,11 @@ body.home-page {
     padding-top: 0;
 }
 
-body.planner-page.has-planner-bar {
-    padding-bottom: var(--planner-bar-height);
-}
-
-body.planner-page.has-planner-bar .site-footer {
-    margin-bottom: var(--planner-bar-height);
+body.site-page > .contact-page,
+body.contact-layout > .contact-page,
+body.about-page .about-main {
+    flex: 1;
+    width: 100%;
 }
 
 body.home-page .navbar {
@@ -122,6 +122,7 @@ body.home-page .navbar {
 }
 
 .nav-auth-item[hidden],
+#nav-cart-item[hidden],
 #hero-auth[hidden],
 #hero-guest[hidden] {
     display: none !important;
