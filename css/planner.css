@@ -8,12 +8,12 @@
     min-height: 100vh;
 }
 
-/* Sticky checkout bar sits above fixed footer */
+/* Fixed checkout bar at bottom of screen */
 .planner-bar {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: var(--footer-height);
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
