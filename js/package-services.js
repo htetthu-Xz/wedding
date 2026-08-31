@@ -262,9 +262,10 @@ function initChoosePage(options) {
         for (var j = 0; j < items.length; j++) {
             var item = items[j];
             var isChosen = choice && choice.itemId === item.id;
-            var card = document.createElement("button");
-            card.type = "button";
+            var card = document.createElement("div");
             card.className = "choose-item-card" + (isChosen ? " is-selected" : "");
+            card.setAttribute("role", "button");
+            card.setAttribute("tabindex", "0");
 
             var visual = document.createElement("div");
             visual.className = "choose-item-visual";
@@ -280,7 +281,24 @@ function initChoosePage(options) {
                     photo.src = DEFAULT_ITEM_IMAGE;
                 }
             });
+
+            var zoomBtn = document.createElement("button");
+            zoomBtn.type = "button";
+            zoomBtn.className = "choose-item-zoom";
+            zoomBtn.setAttribute("aria-label", "View full image of " + item.name);
+            zoomBtn.innerHTML = "<i class=\"fa-solid fa-magnifying-glass-plus\"></i>";
+            zoomBtn.addEventListener("click", function (event) {
+                event.stopPropagation();
+                openImageLightbox(photo.src, item.name);
+            });
+
+            photo.addEventListener("click", function (event) {
+                event.stopPropagation();
+                openImageLightbox(photo.src, item.name);
+            });
+
             visual.appendChild(photo);
+            visual.appendChild(zoomBtn);
 
             if (isChosen) {
                 var badge = document.createElement("span");
