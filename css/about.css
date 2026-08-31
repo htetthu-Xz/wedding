@@ -3,12 +3,9 @@
         radial-gradient(ellipse at top right, rgba(232, 149, 174, 0.1), transparent 55%),
         var(--color-bg);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .about-main {
-    flex: 1;
     max-width: 1000px;
 }
 

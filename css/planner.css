@@ -6,11 +6,38 @@
         radial-gradient(ellipse at bottom left, rgba(184, 134, 11, 0.08), transparent 50%),
         var(--color-bg);
     min-height: 100vh;
-    padding-bottom: 88px;
 }
 
-.planner-page .site-footer {
-    margin-bottom: 72px;
+/* Sticky checkout bar sits above fixed footer */
+.planner-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--footer-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #4c3540 0%, #5a4250 100%);
+    color: #fff;
+    z-index: 140;
+    box-shadow: 0 -8px 32px rgba(76, 53, 64, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.planner-bar #planner-status {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.planner-bar #planner-status::before {
+    content: "✦ ";
+    color: var(--color-accent);
+}
+
+.planner-bar .planner-checkout-btn i {
+    margin-right: 6px;
 }
 
 .planner-page .page-section {
@@ -36,38 +63,6 @@
 .planner-page .flow-step {
     border: 1px solid rgba(76, 53, 64, 0.08);
     box-shadow: var(--shadow-sm);
-}
-
-/* Sticky checkout bar */
-.planner-bar {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #4c3540 0%, #5a4250 100%);
-    color: #fff;
-    z-index: 30;
-    box-shadow: 0 -8px 32px rgba(76, 53, 64, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.planner-bar #planner-status {
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-.planner-bar #planner-status::before {
-    content: "✦ ";
-    color: var(--color-accent);
-}
-
-.planner-bar .planner-checkout-btn i {
-    margin-right: 6px;
 }
 
 /* Vision & package cards */

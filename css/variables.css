@@ -28,4 +28,6 @@
     --font-display: 'Playfair Display', serif;
     --transition: 0.25s ease;
     --nav-height: 76px;
+    --footer-height: 92px;
+    --planner-bar-height: 56px;
 }
