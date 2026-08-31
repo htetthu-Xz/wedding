@@ -30,8 +30,12 @@ body.home-page {
     padding-top: 0;
 }
 
-body.planner-page {
+body.planner-page.has-planner-bar {
     padding-bottom: var(--planner-bar-height);
+}
+
+body.planner-page.has-planner-bar .site-footer {
+    margin-bottom: var(--planner-bar-height);
 }
 
 body.home-page .navbar {
@@ -131,10 +135,6 @@ body.home-page .navbar {
     text-align: center;
     padding: 28px 16px;
     line-height: 1.8;
-}
-
-body.planner-page .site-footer {
-    margin-bottom: var(--planner-bar-height);
 }
 
 .site-footer a {
